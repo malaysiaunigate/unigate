@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniGate Malaysia - Study in Malaysia</title>
+<meta name="description" content="UniGate Malaysia: free consultation and admission support for UKM, IIUM, UMPSA and UMK.">
+<style>
+  html,body{margin:0;height:100%;background:#0a3d91}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
+  #msg{display:none;font:16px/1.5 system-ui,Arial,sans-serif;color:#fff;padding:32px;text-align:center}
+</style>
+</head>
+<body>
+<div id="msg"></div>
+<iframe id="app" title="UniGate Malaysia" allow="clipboard-write; fullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<script>
+var EXEC = 'https://script.google.com/macros/s/AKfycbxT9fUHLIVCWsO86PxlczAga-ZwLoaOyFjCRBIdF_IfT3QK-15zxbHiLRpkh8EWqfJA0A/exec';
+
+(function () {
+  var q = location.search || '', params = new URLSearchParams(q);
+  EXEC = String(EXEC).trim().replace(/[?#].*$/, '');
+  if (!/^https:\/\/script\.google\.com\/(a\/macros\/[A-Za-z0-9._-]+|macros)\/s\/[A-Za-z0-9_-]+\/exec$/.test(EXEC)) {
+    var m = document.getElementById('msg'); m.style.display = 'block';
+    m.textContent = 'Setup needed: edit index.html and set EXEC to your Apps Script web app URL (https://script.google.com/macros/s/.../exec). Current value: ' + EXEC;
+    document.getElementById('app').style.display = 'none'; return;
+  }
+  if (params.get('page') === 'admin' || params.has('c')) { location.replace(EXEC + q); return; }
+  document.getElementById('app').src = EXEC + q;
+})();
+</script>
+</body>
+</html>
